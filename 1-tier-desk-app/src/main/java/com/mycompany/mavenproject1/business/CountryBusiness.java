@@ -5,14 +5,14 @@ import com.mycompany.mavenproject1.data.Country;
 import java.util.Set;
 
 public class CountryBusiness {
-    
+
     private CountryDAO dao;
 
     public CountryBusiness() {
         dao = new CountryDAO();
-        
+
     }
-    
+
     public void create(Country country) throws Exception {
         dao.create(country);
 
