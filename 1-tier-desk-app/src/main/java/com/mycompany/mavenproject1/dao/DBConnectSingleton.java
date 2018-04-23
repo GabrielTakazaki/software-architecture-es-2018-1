@@ -10,7 +10,7 @@ public class DBConnectSingleton {
     private static DBConnectSingleton instance;
     private String dbURL = "jdbc:mysql://localhost:3306/saapp";
     private String username = "root";
-    private String password = "gabriel";
+    private String password = "utfpr";
 
     private DBConnectSingleton() throws SQLException { 
         conn = DriverManager.getConnection(dbURL, username, password);
