@@ -1,21 +1,21 @@
 package com.mycompany.mavenproject1.ui;
 
-import com.mycompany.mavenproject1.business.CountryBusiness;
+import com.mycompany.mavenproject1.business.Facade;
 import com.mycompany.mavenproject1.data.Country;
 import javax.swing.JOptionPane;
 
 public class CountryUI extends javax.swing.JFrame {
 
-    private CountryBusiness countryBusiness;
+    private Facade facade;
     
     public CountryUI() {
         initComponents();
     }
 
-    CountryUI(CountryBusiness countryBusiness) {
+    CountryUI(Facade facade) {
         this();
         
-        this.countryBusiness = countryBusiness;
+        this.facade = facade;
     }
 
     /**
@@ -87,7 +87,7 @@ public class CountryUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listbtActionPerformed
-        listarea.setText(countryBusiness.readAll().toString());
+        listarea.setText(facade.readAllCountry().toString());
     }//GEN-LAST:event_listbtActionPerformed
 
     private void createbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createbtActionPerformed
@@ -99,7 +99,7 @@ public class CountryUI extends javax.swing.JFrame {
         c.setDigits(new Integer(phonedigitstxt.getText()));
         
         try {
-            countryBusiness.create(c);
+            facade.createCountry(c);
             
         } catch (Exception ex) {
             JOptionPane.showConfirmDialog(this, ex.getMessage());
