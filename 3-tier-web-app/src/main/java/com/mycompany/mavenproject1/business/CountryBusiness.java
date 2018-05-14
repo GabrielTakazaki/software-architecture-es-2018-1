@@ -22,5 +22,9 @@ public class CountryBusiness {
         return dao.readAll();
 
     }
+    
+    public Country readById(int id) {
+        return dao.readById(id);
+    }
 
 }
